@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodzaje rysunków - Technik stylista</title>
+  <!-- Tutaj podpinamy styl, który obsłuży całą stronę i menu -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. PUSTY KONTENER NA PASEK NAWIGACJI -->
+  <div id="miejsce-na-nawigacje"></div>
+
+
+
+
+ <!-- GŁÓWNA ZAWARTOŚĆ -->
+ <main class="main-content">
+
+   <h1 class="proj-h1">RODZAJE RYSUNKÓW</h1> <br>
+   
+ <h2 class="proj">1. Rysunki koncepcyjne i artystyczne (Faza inspiracji)</h2> <br>
+   <p>Grupa rysunków służąca przede wszystkim do przelania pierwszych, ogólnych myśli projektanta na papier, a dominującą rolę odgrywa w nich ekspresja plastyczna.</p> <br>
+   <ul>
+     <li><strong>Szkice i formy malarskie</strong> - rysunki powstają jako pierwsze i stanowią szybką notatkę myślową autora. <br>
+       Projektant używa w nich plam barwnych oraz różnych technik malarskich, takich jak akwarela czy gwasz, aby zbadać łączenia kolorów oraz ogólną bryłę tkaniny. <br>
+       Sylwetka ludzka jest w tym przypadku traktowana drugoplanowo i często zostaje zaledwie zarysowana kilkoma liniami.</li>
+     <li><strong>Rysunek żurnalowy</strong>, ilustracja modowa, której celem jest przedstawienie klimatu kolekcji, nastroju oraz ogólnej wizji artystycznej, mająca za zadanie zachwycić odbiorcę lub klienta. <br>
+     Sylwetka modelki posiada świadomie przerysowane i wydłużone proporcje, które najczęściej mieszczą się w kanonie dziewięciu lub dziesięciu główek. <br>
+     Rysunek żurnalowy charakteryzuje się dużą dynamiką ruchu, wyrazistym światłocieniem oraz efektownym oddaniem faktury materiału, natomiast precyzja szwów ma tutaj znikome znaczenie.</li>
+   </ul>
+
+   <br>
+
+   <h2 class="proj">2. Rysunki weryfikacyjne i prezentacyjne (Faza projektu właściwego)</h2> <br>
+    <p>Na tym etapie projektowania wizja artystyczna spotyka się z realną anatomią ludzkiego ciała, co pozwala ocenić funkcjonalność ubioru.</p> <br>
+    <ul>
+      <li><strong>Rysunek modelowy</strong> przedstawia ubiór na sylwetce o naturalnych lub tylko nieznacznie idealizowanych proporcjach ciała. <br>
+        Model jest rysowany zazwyczaj w pozycji stojącej, co pozwala precyzyjnie ocenić długość rękawów, szerokość ramion oraz ułożenie linii talii. <br>
+        Rysunek modelowy bardzo dokładnie pokazuje rzeczywisty fason odzieży oraz naturalne załamania i fałdy materiału, dzięki czemu stanowi idealny pomost między sztuką a rzemiosłem krawieckim.</li>
+    </ul>
+
+   <br>
+
+   <h2 class="proj">3. Rysunki wykonawcze i technologiczne (Faza produkcji)</h2> <br>
+    <p>Grupa rysunków całkowicie rezygnujących z walorów artystycznych na rzecz maksymalnej czytelności, precyzji oraz unifikacji zapisu.</p> <br>
+    <ul>
+      <li><strong>Rysunek techniczny</strong>, nazywany też <em>płaskim</em>, służy do jednoznacznego przedstawienia budowy odzieży i staje się podstawą do stworzenia szablonów krawieckich przez konstruktora. <br>
+  Ubranie pokazuje się w sposób całkowicie płaski, w oderwaniu od ludzkiego ciała, rysując osobno przód oraz tył danego modelu. <br>
+        W rysunku tym stosuje się znormalizowany zapis linii, gdzie linia ciągła gruba oznacza zewnętrzne kontury ubrania, linia ciągła cienka wyznacza wewnętrzne cięcia konstrukcyjne, a linia przerywana odwzorowuje stebnowanie maszynowe.</li> <br>
+
+      <li><strong>Rysunki przekrojów i węzłów technologicznych - Rysunki  instruktażowe</strong> to rysunki schematyczne, ukazujące niewidoczną z zewnątrz strukturę wewnętrznych połączeń szwalniczych. <br>
+        Przedstawiają one w dużym powiększeniu precyzyjny układ warstw materiału zasadniczego, podszewek, wkładów usztywniających oraz sam przebieg nitki. <br>
+        Te rysunki stanowią bezpośrednią instrukcję wykonawczą dla szwaczek, ponieważ wyjaśniają, jak poprawnie uszyć skomplikowane elementy, takie jak zamki kryte, kieszenie z wypustkami czy kołnierze żakietów <br>
+        (A więc rysunek instruktażowy przedstawia obróbkę elementów odzieży).</li>
+    </ul>
+
+   
+ </main>
+
+<!-- 4. SKRYPT JS, KTÓRY WKLEJA NAWIGACJĘ -->
+  <script>
+    fetch('pasnav.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Nie udało się pobrać pliku nawigacji.');
+        }
+        return response.text();
+      })
+      .then(data => {
+        // Wstrzykuje pobrany kod HTML paska do naszego diva
+        document.getElementById('miejsce-na-nawigacje').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Błąd ładowania nawigacji:', error);
+      });
+  </script>
+
+</body>
+</html>
+
+
+
+
