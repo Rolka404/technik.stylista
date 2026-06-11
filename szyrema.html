@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szycie ręczne i maszynowe - Technik stylista</title>
+  <!-- Tutaj podpinamy styl, który obsłuży całą stronę i menu -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. PUSTY KONTENER NA PASEK NAWIGACJI -->
+  <div id="miejsce-na-nawigacje"></div>
+
+
+
+
+ <!-- GŁÓWNA ZAWARTOŚĆ -->
+ <main class="main-content">
+<div class="diagram-kontener">
+  <!-- Główny nagłówek -->
+  <div class="wezel-glowny">ŚCIEGI</div>
+  
+  <!-- Trzy główne gałęzie -->
+  <div class="galezie">
+    
+    <!-- Kolumna: Wewnętrzne -->
+    <div class="kolumna zolty">
+      <div class="naglowek-kolumny">WEWNĘTRZNE</div>
+      <ul class="lista-ciegow">
+        <li>przed igłą</li>
+        <li>fastrygowy</li>
+        <li>stębnowy</li>
+        <li>za igłą</li>
+        <li>pętelkowy</li>
+        <li>kryty</li>
+        <li>pikowy</li>
+      </ul>
+    </div>
+
+    <!-- Kolumna: Brzeżne -->
+    <div class="kolumna niebieski">
+      <div class="naglowek-kolumny">BRZEŻNE</div>
+      <ul class="lista-ciegow">
+        <li>obrzucany</li>
+        <li>dziergany</li>
+      </ul>
+    </div>
+
+    <!-- Kolumna: Ozdobne -->
+    <div class="kolumna rozowy">
+      <div class="naglowek-kolumny">OZDOBNE</div>
+      <ul class="lista-ciegow">
+        <li>sznureczkowy</li>
+        <li>łańcuszkowy</li>
+        <li>gałązkowy</li>
+        <li>krzyżykowy</li>
+        <li>mereżkowy</li>
+        <li>zakopiański</li>
+        <li>zygzakowy</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+ </main>
+
+<!-- 4. SKRYPT JS, KTÓRY WKLEJA NAWIGACJĘ -->
+  <script>
+    fetch('pasnav.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Nie udało się pobrać pliku nawigacji.');
+        }
+        return response.text();
+      })
+      .then(data => {
+        // Wstrzykuje pobrany kod HTML paska do naszego diva
+        document.getElementById('miejsce-na-nawigacje').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Błąd ładowania nawigacji:', error);
+      });
+  </script>
+
+</body>
+</html>
