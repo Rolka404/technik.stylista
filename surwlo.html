@@ -46,7 +46,7 @@
       <th colspan="2" class="bg-zwierzece">Zwierzęce</th>
       <th class="bg-mineralne">Mineralne</th>
     </tr>
-    <!-- Szczegółowe kategorie -->
+    <!-- Szczegółowe kategorie ORAZ azbest -->
     <tr class="row-sub-header-3">
       <td class="bg-roslinne-light">nasienne</td>
       <td class="bg-roslinne-light">łodygowe</td>
@@ -54,11 +54,16 @@
       <td class="bg-roslinne-light">owocowe</td>
       <td class="bg-zwierzece-light">uwłosienie</td>
       <td class="bg-zwierzece-light">oprzędy</td>
-      <!-- Komórka azbestu łączy ten wiersz i wiersz z danymi -->
+      <!-- Azbest zaczyna się tutaj i rozciąga pionowo w dół na poziom danych -->
+      <td rowspan="2" class="row-content">
+        <ul>
+          <li>azbest</li>
+        </ul>
+      </td>
     </tr>
   </thead>
   <tbody>
-    <!-- Wiersz z listą włókien -->
+    <!-- Wiersz z listą włókien (bez azbestu, bo zajął go rowspan wyżej) -->
     <tr class="row-content">
       <td>
         <ul>
@@ -99,11 +104,7 @@
           <li>jedwab dębowy</li>
         </ul>
       </td>
-      <td>
-        <ul>
-          <li>azbest</li>
-        </ul>
-      </td>
+      <!-- Ostatnia komórka usunięta, bo azbest z góry zajmuje to miejsce -->
     </tr>
   </tbody>
 </table>
