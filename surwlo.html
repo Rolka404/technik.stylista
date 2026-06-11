@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surowce włókiennicze - Technik stylista</title>
+  <!-- Ten sam plik stylów dla całej witryny -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PUSTY KONTENER NA PASEK NAWIGACJI (Taki sam jak w index.html) -->
+  <div id="miejsce-na-nawigacje"></div>
+
+  <!-- TUTAJ WPISUJESZ NOWĄ TREŚĆ DLA TEJ KONKRETNEJ PODSTRONY -->
+  <main class="main-content">
+     <h1 class="h1">KLASYFIKACJA WŁÓKIEN</h1>
+
+    <p class="p-h1"><strong>Włókna naturalne</strong> - to włókna występujące w przyrodzie. <br>
+    Dzielą się na:
+    <ul>
+     <li><strong>włókna organiczne</strong>, których źródłem są: <br>
+      * różne części roślin (włókna rolślinne), <br>
+      * uwłosienie zwierząt i oprzędy gąsienic motyla zwanego <em>jedwabnikiem</em> (włókna zwierzęce) <br>
+      oraz 
+     </li>
+     <li><strong>włókna nieorganiczne</strong>, pozyskiwane z substancji mineralnych.</li>
+     
+    </ul>
+   </p> <br>
+    
+    <table class="wlokna-table">
+  <thead>
+    <!-- Główny nagłówek -->
+    <tr class="row-main-header">
+      <th colspan="7">WŁÓKNA NATURALNE</th>
+    </tr>
+    <!-- Podział główny -->
+    <tr class="row-sub-header-1">
+      <th colspan="6">Organiczne</th>
+      <th colspan="1">Nieorganiczne</th>
+    </tr>
+    <!-- Podział na pochodzenie -->
+    <tr class="row-sub-header-2">
+      <th colspan="4" class="bg-roslinne">Roślinne</th>
+      <th colspan="2" class="bg-zwierzece">Zwierzęce</th>
+      <th class="bg-mineralne">Mineralne</th>
+    </tr>
+    <!-- Szczegółowe kategorie -->
+    <tr class="row-sub-header-3">
+      <td class="bg-roslinne-light">nasienne</td>
+      <td class="bg-roslinne-light">łodygowe</td>
+      <td class="bg-roslinne-light">liściaste</td>
+      <td class="bg-roslinne-light">owocowe</td>
+      <td class="bg-zwierzece-light">uwłosienie</td>
+      <td class="bg-zwierzece-light">oprzędy</td>
+      <!-- Komórka azbestu łączy ten wiersz i wiersz z danymi -->
+      <td rowspan="2" class="bg-mineralne-light val-top">
+        <ul>
+          <li>azbest</li>
+        </ul>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Wiersz z listą włókien -->
+    <tr class="row-content">
+      <td>
+        <ul>
+          <li>bawełna</li>
+          <li>kapok</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>len</li>
+          <li>konopie</li>
+          <li>juta</li>
+          <li>ramia</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>sizal</li>
+          <li>manila</li>
+        </ul>
+      </td>
+      <td class="text-muted">
+        <ul>
+          <li>kokos</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>wełna</li>
+          <li>włos</li>
+          <li>sierść</li>
+          <li>włosie</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>jedwab morwowy</li>
+          <li>jedwab dębowy</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </main>
+
+  <!-- STOPKA STRONY -->
+  <footer>
+    <p>&copy; 2026 Technik stylista. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+  <!-- DOKŁADNIE TEN SAM SKRYPT IMPORTUJĄCY MENU -->
+  <script>
+    fetch('nawigacja.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Nie udało się pobrać pliku nawigacji.');
+        }
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('miejsce-na-nawigacje').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Błąd ładowania nawigacji:', error);
+      });
+  </script>
+
+</body>
+</html>
