@@ -12,8 +12,8 @@ body {
     background-repeat: no-repeat;
     /* 1. ZMIANA CZCIONKI DLA CAŁEJ STRONY */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    /* 2. ODSUNIĘCIE CAŁEJ ZAWARTOŚCI OD KRAWĘDZI STRONY */
-    padding: 0 20px; 
+   max-width: 1200px; /* Szerokość środkowego obszaru bez kratki */
+    margin: 0 auto;    /* Wyśrodkowanie całej strony */
 }
 
 /* "LOGO STRONY" */
