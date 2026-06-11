@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* WYGLĄD OGÓLNY */
+body {
+    background-image: url('back.png');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* "LOGO STRONY" */
+.logo-icon {
+    height: 45px;                   
+    width: auto;
+    display: block;
+}
+
+/* --- USTAWIENIA PASKA NAWIGACYJNEGO --- */
+.pasnav {
+    background-color: #d3d3d3;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 0 16px;
+    position: sticky; /* Sprawia, że pasek zostaje na górze podczas przewijania */
+    top: 0;
+    z-index: 100;
+}
+
+/* KONTENER TRZYMAJĄCY STRUKTURĘ */
+.pasnav-container {
+    max-width: 1128px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 52px; 
+}
+
+/* KONTENER NA MENU Z PRZYCISKAMI */
+.nav-list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style: none; /* Ukrywa kropki listy w menu */
+}
+
+/* PUDEŁKO TRZYMAJĄCE MENU I PODMENU */
+.roz-men {
+    position: relative;             /* Ważne: punkt odniesienia, by podmenu rozwijało się pod ikoną */
+    display: flex;
+    align-items: center;
+    height: 100%;
+} 
+
+/* ==========================================================================
+   3. PRZYCISKI Z IKONAMI I NAPISAMI 
+   ========================================================================== */
+.but-nav {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    text-decoration: none;  
+    color: #666666;         
+    min-width: 110px; /* Zwiększona szerokość, aby zmieścić długie podpisy */      
+    height: 100%;
+    padding: 0 8px; 
+    transition: color 0.2s ease;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer; /* Dodano kursor rączki dla przycisku */
+}
+
+/* EFEKT PO NAJECHANIU MYSZKĄ NA MENU */
+.but-nav:hover {
+    color: #191919;
+}
+
+/* STYL DLA ILUSTRACJI W MENU */
+.but-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain; /* Gwarantuje brak zniekształceń */
+    margin-bottom: 4px;  /* Odstęp między ilustracją a tekstem pod nią */
+    display: block;
+}
+
+/* STYL DLA NAPISÓW W MENU */
+.but-napis {
+    font-size: 11px;        
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.3;       
+    word-wrap: break-word;  /* Bezpieczne łamanie tekstu, jeśli słowo jest bardzo długie */
+}
+
+/* ==========================================================================
+   4. ROZWIJANA LISTA PODMENU (DROPDOWN)
+   ========================================================================== */
+.roz-list {
+    display: none;                  /* Domyślnie ukryte podmenu */
+    position: absolute;
+    top: 100%;                      /* Rozwija listę bezpośrednio pod dolną krawędzią przycisku */
+    left: 50%;
+    transform: translateX(-50%);    /* Idealnie centruje wysuwane okienko względem ikony */
+    
+    background-color: #ffffff;      
+    border: 1px solid #cccccc;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15); 
+    list-style: none;
+    min-width: 240px;               
+    z-index: 9999;                  
+
+    margin-top: 0;                  /* USUWAMY: ten margines tworzył pustą przerwę, przez którą menu znikało */
+    padding-top: 10px;              /* DODAJEMY: przeźroczysty obszar na górze - myszka go nie zgubi */
+    padding-bottom: 8px;            
+}
+
+/* GŁÓWNY MECHANIZM: Pokazuje listę .roz-list, gdy najedziemy myszką na pudełko .roz-men */
+.roz-men:hover .roz-list {
+    display: block;
+}
+
+/* Styl dla pojedynczych linków wewnątrz podmenu (np. Antropometria) */
+.roz-list a {
+    display: block;
+    padding: 8px 20px;
+    color: #444444;                 /* Szary, stonowany kolor tekstu wewnątrz listy */
+    text-decoration: none;          /* Usuwa domyślne podkreślenie linków */
+    font-size: 13px;
+    font-family: sans-serif;
+    transition: background-color 0.2s, color 0.2s; /* Płynne przejście koloru po najechaniu */
+}
+
+/* Efekt wizualny po najechaniu myszką na dany podpunkt w liście */
+.roz-list a:hover {
+    background-color: #e9e9e9;      /* Jasnoszare tło podświetlające wybrany element */
+    color: #000000;                 /* Zmiana tekstu na głęboką czerń */
+}
+
+/* --- STYLIZACJA TEKSTU I TYTUŁÓW --- */
+.h3 {
+    text-align: center;
+}
+
+.p-h3 {
+    text-align: center;
+}
+
+.h1 {
+    text-align: center;
+} /* <-- POPRAWKA: Dodano brakującą klamrę zamykającą dla .h1 */
+
+.p-h1 {
+    text-align: center;
+}
+
+.p-h2 {
+    padding: 20px;
+}
+
+.h2 {
+    padding: 20px;
+}
+
+/* ==========================================================================
+   5. SUROWCE WŁÓKIENNICZE 
+   ========================================================================== */
+/* Podstawowe style tabeli */
+.wlokna-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Wspólne style dla nagłówków i komórek */
+.wlokna-table th, 
+.wlokna-table td {
+    border: 1px solid #555555;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Układ list wewnątrz komórek */
+.wlokna-table ul {
+    list-style-type: square; /* Kwadratowe wypunktowanie */
+    margin: 0;
+    padding-left: 15px;
+    text-align: left; /* Wyrównanie tekstu listy do lewej */
+}
+
+/* Wyrównanie zawartości azbestu do góry */
+.val-top {
+    vertical-align: top;
+}
+
+/* Kolory tła poszczególnych sekcji */
+.row-main-header th {
+    background-color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.row-sub-header-1 th {
+    background-color: #e6e6e6;
+}
+
+/* Kolory główne kategorii */
+.bg-roslinne { background-color: #97cb8a; }
+.bg-zwierzece { background-color: #e5d77d; }
+.bg-mineralne { background-color: #8daed5; }
+
+/* Jasne odcienie dla podkategorii i zawartości */
+.bg-roslinne-light { background-color: #c7e7be; }
+.bg-zwierzece-light { background-color: #f3ebbe; }
+.bg-mineralne-light { background-color: #b7cde6; }
+
+/* Kolor dla mniej widocznego tekstu (np. kokos) */
+.text-muted {
+    color: #888888;
+}
+
+
