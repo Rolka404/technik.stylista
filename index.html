@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technik stylista - Strona Główna</title>
+  <!-- Tutaj podpinamy styl, który obsłuży całą stronę i menu -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. PUSTY KONTENER NA PASEK NAWIGACJI -->
+  <div id="miejsce-na-nawigacje"></div>
+
+  <!-- 2. GŁÓWNA ZAWARTOŚĆ STRONY INDEX -->
+  <main class="main-content">
+    <h1>Witaj w świecie Technika Stylisty!</h1>
+    <p>To jest strona główna.. Wybierz interesującą Cię kategorię z menu powyżej.</p>
+  </main>
+
+  <!-- 3. STOPKA STRONY -->
+  <footer>
+    <p>&copy; 2026 Technik stylista. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+  <!-- 4. SKRYPT JS, KTÓRY WKLEJA NAWIGACJĘ -->
+  <script>
+    fetch('nawigacja.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Nie udało się pobrać pliku nawigacji.');
+        }
+        return response.text();
+      })
+      .then(data => {
+        // Wstrzykuje pobrany kod HTML paska do naszego diva
+        document.getElementById('miejsce-na-nawigacje').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Błąd ładowania nawigacji:', error);
+      });
+  </script>
+
+</body>
+</html>
