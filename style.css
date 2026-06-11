@@ -223,9 +223,8 @@ body {
 .bg-zwierzece-light { background-color: #f3ebbe; }
 .bg-mineralne-light { background-color: #b7cde6; }
 
-/* Kolor dla mniej widocznego tekstu (np. kokos) */
-.text-muted {
-    color: #888888;
-}
+.row-content { background-color: d3d3d3 }
+
+
 
 
