@@ -149,6 +149,22 @@ body {
 }
 
 /* --- STYLIZACJA TEKSTU I TYTUŁÓW --- */
+.h1-stylista {
+    text-align: center; 
+    background-color: #ff6347; 
+    border: 3px dotted #000000; /* Czarna kropkowana ramka */
+    padding: 10px; /* Dodatkowa przestrzeń między tekstem a ramką */
+    margin-bottom: 20px; /* Odstęp pod nagłówkiem */
+}
+
+.sp-tech {
+     text-align: center; 
+    background-color: #ff6347; 
+    border: 3px dotted #000000; /* Czarna kropkowana ramka */
+    padding: 10px; /* Dodatkowa przestrzeń między tekstem a ramką */
+    margin-bottom: 20px; /* Odstęp pod nagłówkiem */
+}
+
 .h3 {
     text-align: center;
 }
