@@ -10,7 +10,10 @@ body {
     background-size: cover;       
     background-position: center;  
     background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
+    /* 1. ZMIANA CZCIONKI DLA CAŁEJ STRONY */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* 2. ODSUNIĘCIE CAŁEJ ZAWARTOŚCI OD KRAWĘDZI STRONY */
+    padding: 0 20px; 
 }
 
 /* "LOGO STRONY" */
@@ -24,9 +27,10 @@ body {
 .pasnav {
     background-color: #d3d3d3;
     border-bottom: 1px solid #e0e0e0;
-    width: 100%;
+    width: calc(100% + 40px); /* Rozszerzenie, by ignorował padding body */
+    margin: 0 -20px;          /* Wyrównanie do krawędzi ekranu */
     padding: 0 16px;
-    position: sticky; /* Sprawia, że pasek zostaje na górze podczas przewijania */
+    position: sticky; 
     top: 0;
     z-index: 100;
 }
@@ -46,12 +50,12 @@ body {
     display: flex;
     align-items: center;
     height: 100%;
-    list-style: none; /* Ukrywa kropki listy w menu */
+    list-style: none; 
 }
 
 /* PUDEŁKO TRZYMAJĄCE MENU I PODMENU */
 .roz-men {
-    position: relative;             /* Ważne: punkt odniesienia, by podmenu rozwijało się pod ikoną */
+    position: relative;             
     display: flex;
     align-items: center;
     height: 100%;
@@ -67,14 +71,14 @@ body {
     justify-content: center;
     text-decoration: none;  
     color: #666666;         
-    min-width: 110px; /* Zwiększona szerokość, aby zmieścić długie podpisy */      
+    min-width: 110px;       
     height: 100%;
     padding: 0 8px; 
     transition: color 0.2s ease;
     border: none;
     outline: none;
     background: transparent;
-    cursor: pointer; /* Dodano kursor rączki dla przycisku */
+    cursor: pointer; 
 }
 
 /* EFEKT PO NAJECHANIU MYSZKĄ NA MENU */
@@ -86,8 +90,8 @@ body {
 .but-icon {
     width: 24px;
     height: 24px;
-    object-fit: contain; /* Gwarantuje brak zniekształceń */
-    margin-bottom: 4px;  /* Odstęp między ilustracją a tekstem pod nią */
+    object-fit: contain; 
+    margin-bottom: 4px;  
     display: block;
 }
 
@@ -97,18 +101,18 @@ body {
     font-weight: 400;
     text-align: center;
     line-height: 1.3;       
-    word-wrap: break-word;  /* Bezpieczne łamanie tekstu, jeśli słowo jest bardzo długie */
+    word-wrap: break-word;  
 }
 
 /* ==========================================================================
    4. ROZWIJANA LISTA PODMENU (DROPDOWN)
    ========================================================================== */
 .roz-list {
-    display: none;                  /* Domyślnie ukryte podmenu */
+    display: none;                  
     position: absolute;
-    top: 100%;                      /* Rozwija listę bezpośrednio pod dolną krawędzią przycisku */
+    top: 100%;                      
     left: 50%;
-    transform: translateX(-50%);    /* Idealnie centruje wysuwane okienko względem ikony */
+    transform: translateX(-50%);    
     
     background-color: #ffffff;      
     border: 1px solid #cccccc;
@@ -117,8 +121,8 @@ body {
     min-width: 240px;               
     z-index: 9999;                  
 
-    margin-top: 0;                  /* USUWAMY: ten margines tworzył pustą przerwę, przez którą menu znikało */
-    padding-top: 10px;              /* DODAJEMY: przeźroczysty obszar na górze - myszka go nie zgubi */
+    margin-top: 0;                  
+    padding-top: 10px;              
     padding-bottom: 8px;            
 }
 
@@ -127,21 +131,21 @@ body {
     display: block;
 }
 
-/* Styl dla pojedynczych linków wewnątrz podmenu (np. Antropometria) */
+/* Styl dla pojedynczych linków wewnątrz podmenu */
 .roz-list a {
     display: block;
     padding: 8px 20px;
-    color: #444444;                 /* Szary, stonowany kolor tekstu wewnątrz listy */
-    text-decoration: none;          /* Usuwa domyślne podkreślenie linków */
+    color: #444444;                 
+    text-decoration: none;          
     font-size: 13px;
-    font-family: sans-serif;
-    transition: background-color 0.2s, color 0.2s; /* Płynne przejście koloru po najechaniu */
+    /* Usunięto font-family, aby dziedziczyło czcionkę globalną */
+    transition: background-color 0.2s, color 0.2s; 
 }
 
 /* Efekt wizualny po najechaniu myszką na dany podpunkt w liście */
 .roz-list a:hover {
-    background-color: #e9e9e9;      /* Jasnoszare tło podświetlające wybrany element */
-    color: #000000;                 /* Zmiana tekstu na głęboką czerń */
+    background-color: #e9e9e9;      
+    color: #000000;                 
 }
 
 /* --- STYLIZACJA TEKSTU I TYTUŁÓW --- */
@@ -155,7 +159,7 @@ body {
 
 .h1 {
     text-align: center;
-} /* <-- POPRAWKA: Dodano brakującą klamrę zamykającą dla .h1 */
+} 
 
 .p-h1 {
     text-align: center;
@@ -176,7 +180,7 @@ body {
 .wlokna-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: Arial, sans-serif;
+    /* Usunięto font-family, aby dziedziczyło czcionkę globalną */
     font-size: 14px;
     margin-top: 20px;
 }
@@ -191,10 +195,10 @@ body {
 
 /* Układ list wewnątrz komórek */
 .wlokna-table ul {
-    list-style-type: square; /* Kwadratowe wypunktowanie */
+    list-style-type: square; 
     margin: 0;
     padding-left: 15px;
-    text-align: left; /* Wyrównanie tekstu listy do lewej */
+    text-align: left; 
 }
 
 /* Wyrównanie zawartości azbestu do góry */
@@ -223,7 +227,7 @@ body {
 .bg-zwierzece-light { background-color: #f3ebbe; }
 .bg-mineralne-light { background-color: #b7cde6; }
 
-.row-content { background-color: d3d3d3 }
+.row-content { background-color: #d3d3d3; } /* Poprawiono brakujący średnik */
 
 
 
