@@ -235,7 +235,152 @@ body {
 .bg-zwierzece-light { background-color: #f3ebbe; }
 .bg-mineralne-light { background-color: #b7cde6; }
 
-.row-content { background-color: #d3d3d3; } /* Poprawiono brakujący średnik */
+.row-content { background-color: #d3d3d3; } 
+
+/* ŚCIEGI */
+.diagram-kontener {
+  font-family: 'Arial', sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  position: relative;
+}
+
+/* Główny pomarańczowy kafelek */
+.wezel-glowny {
+  background-color: #ff6600;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 40px;
+  display: inline-block;
+  border: 2px solid #000;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Układ kolumn */
+.galezie {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  position: relative;
+}
+
+/* Linie łączące góry kolumn z głównym kafelkiem */
+.galezie::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 16%;
+  right: 16%;
+  height: 2px;
+  background-color: #000;
+  z-index: 1;
+}
+
+.galezie::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background-color: #000;
+  z-index: 1;
+}
+
+/* Styl pojedynczej kolumny */
+.kolumna {
+  flex: 1;
+  margin: 0 15px;
+  position: relative;
+}
+
+/* Pionowe linie od poziomej kreski do nagłówków kolumn */
+.kolumna::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  width: 2px;
+  height: 40px;
+  background-color: #000;
+  z-index: 1;
+}
+
+/* Nagłówki sekcji (Wewnętrzne, Brzeżne, Ozdobne) */
+.naglowek-kolumny {
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Kolorowanie nagłówków */
+.zolty .naglowek-kolumny { background-color: #fff200; }
+.niebieski .naglowek-kolumny { background-color: #00aeef; color: white; }
+.rozowy .naglowek-kolumny { background-color: #ec008c; color: white; }
+
+/* Listy ze ściegami */
+.lista-ciegow {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Główna pionowa linia prowadząca w dół do elementów list */
+.lista-ciegow::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 2px;
+  height: calc(100% - 20px);
+  background-color: #000;
+}
+
+/* Pojedyncze kafelki ze ściegami */
+.lista-ciegow li {
+  width: 80%;
+  margin: 6px 0;
+  padding: 6px 10px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 14px;
+  position: relative;
+  background-color: #fff;
+  z-index: 2;
+}
+
+/* Kolorowanie tła kafelków li */
+.zolty .lista-ciegow li { background-color: #fffae6; }
+.niebieski .lista-ciegow li { background-color: #e6f7ff; }
+.rozowy .lista-ciegow li { background-color: #ffe6f2; }
+
+/* Poziome małe kreski łączące główną linię z każdym kafelkiem */
+.lista-ciegow li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 10px;
+  height: 2px;
+  background-color: #000;
+  display: none; /* Domyślnie ukryte, odblokuj jeśli chcesz linie z boku */
+}
 
 
 
