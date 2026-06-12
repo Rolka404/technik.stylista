@@ -384,4 +384,80 @@ body {
 
 
 
+/* --- STYL DLA TELEFONÓW (EKRANY PONIŻEJ 768px) --- */
+@media screen and (max-width: 768px) {
+    
+    /* Ukrywamy standardowy flex-row i zmieniamy w pionowy układ */
+    .pasnav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    /* Wyśrodkowanie logo i dodanie odstępu */
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    /* Lista menu układa się w kolumnie, szerokość na 100% */
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Elementy menu głównego na pełną szerokość */
+    .roz-men {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        border-bottom: 1px solid #c0c0c0; /* Delikatne linie podziału */
+    }
+
+    /* Przyciski dopasowane do szerokości telefonu */
+    .but-nav {
+        width: 100%;
+        padding: 12px 0;
+        flex-direction: row; /* Ikona obok tekstu zamiast nad nim */
+        justify-content: flex-start; /* Do lewej krawędzi */
+    }
+
+    /* Ikona w przycisku dostaje odstęp z prawej */
+    .but-icon {
+        margin-bottom: 0;
+        margin-right: 12px;
+        margin-left: 15px;
+    }
+
+    /* Napis staje się większy i czytelniejszy na dotyk */
+    .but-napis {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    /* --- ROZWIJANE PODMENU NA TELEFONIE --- */
+    /* Zamiast hover (który nie działa na dotyk), menu rozwija się po kliknięciu lub 
+       w wersji uproszczonej CSS wyświetlamy je od razu pod przyciskiem */
+    .roz-men:hover .roz-list {
+        display: block;
+    }
+
+    .roz-list {
+        position: static; /* Kasuje absolutne pozycjonowanie */
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        background-color: #e9e9e9; /* Ciemniejsze tło dla odróżnienia */
+        padding-left: 30px; /* Wcięcie dla linków podmenu */
+    }
+
+    .roz-list a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+
+
 
