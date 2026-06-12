@@ -456,6 +456,46 @@ body {
         font-size: 14px;
         padding: 10px 20px;
     }
+
+    /* Przykład 1: Zmiana wyglądu głównego tekstu na stronie index */
+    .main-content {
+        padding: 15px; /* Mniejsze marginesy na małym ekranie */
+    }
+    
+    .h1-stylista {
+        font-size: 24px; /* Zmniejszenie nagłówka, żeby nie łamał się brzydko */
+        text-align: center;
+    }
+
+    /* Przykład 2: Przebudowa tabeli surowców na kafelki */
+    /* Tabele na telefonach często się nie mieszczą. To wymusi przewijanie w poziomie */
+    .wlokna-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Przykład 3: Przebudowa diagramu ściegów (Flexbox z poziomego na pionowy) */
+    .galezie {
+        flex-direction: column; /* Układa kolumny jedna pod drugą zamiast obok siebie */
+        gap: 30px;
+    }
+
+    /* Ukrycie linii łączących z wersji komputerowej, które zepsują się na telefonie */
+    .galezie::before, 
+    .galezie::after,
+    .kolumna::before {
+        display: none;
+    }
+
+    .kolumna {
+        margin: 10px 0;
+    }
+
+    .lista-ciegow li {
+        width: 100%; /* Kafelki ściegów zajmą pełną szerokość telefonu */
+    }
+        
 }
 
 
